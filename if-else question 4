@@ -1,0 +1,19 @@
+/*
+Number Comparison: Write a program that prompts the user to enter
+two numbers and compares them to determine which one is greater,
+smaller, or if they are equal, using if else statements.
+*/
+
+let num1 = prompt("Enter first number: ");
+let num2 = prompt("Enter second number: ");
+
+num1 = Number(num1);
+num2 = Number(num2);
+
+if(num1 > num2){
+    console.log("First number is greater.")
+} else if(num1 < num2){
+    console.log("Second number is greater.")
+} else{
+    console.log("Both numbers are equal.")
+}
