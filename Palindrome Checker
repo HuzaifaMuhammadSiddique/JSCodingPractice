@@ -1,0 +1,21 @@
+/*
+Palindrome Checker: Write a function that checks if a given string
+is a palindrome, i.e., it reads the same forwards and backwards,
+ignoring spaces, punctuation, and letter casing.
+*/
+
+let word = prompt("Enter a word: ");
+let length = word.length;
+let counter  = length - 1;
+let backword = ""
+
+while (counter > -1){
+backword = backword + word[counter]
+counter -= 1
+}
+
+if(word == backword){
+    console.log("Yes. this word is a palindrome!")
+} else{
+    console.log("No, this word is not a palindrome!")
+}
