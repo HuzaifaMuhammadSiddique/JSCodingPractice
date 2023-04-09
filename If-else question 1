@@ -1,0 +1,34 @@
+/*
+Grade Calculator: Write a program that prompts the user to enter a numerical grade (0-100)
+and then displays the corresponding letter grade (A, B, C, D, or F) using if else statements.
+*/
+
+// CODE
+
+let marks = prompt("Enter your marks: ");
+marks = Number.parseInt(marks);
+
+if((marks >= 0) && (marks < 50)){
+    let grade = "F";
+    alert("Your grade is " + grade);
+} else if((marks >= 50 && marks < 59)){
+    let grade = "E";
+    alert("Your grade is " + grade);
+} else if((marks >= 60) && (marks < 69)){
+    let grade = "D";
+    alert("Your grade is " + grade);
+} else if((marks >= 70) && (marks < 79)){
+    let grade = "C";
+    alert("Your grade is " + grade);
+} else if((marks >= 80) && (marks < 89)){
+    let grade = "B";
+    alert("Your grade is " + grade);
+} else if((marks >= 90) && (marks < 95)){
+    let grade = "A";
+    alert("Your grade is " + grade);
+} else if((marks >= 95) && (marks <= 100)){
+    let grade = "A*";
+    alert("Your grade is " + grade);
+} else{
+    alert("Please write valid marks. Marks should be between 0 and 100 inclusive.");
+}
