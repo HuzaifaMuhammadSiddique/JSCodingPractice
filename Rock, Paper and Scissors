@@ -1,0 +1,55 @@
+/*
+Rock, Paper, Scissors:
+Write a program that simulates the game of Rock, Paper, Scissors
+between the user and the computer. The program should take user
+input for their choice (rock, paper, or scissors), generate a
+random choice for the computer, and determine the winner based on
+the game rules. Display the result to the user with appropriate
+messages using if-else statements.
+*/
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+console.log("Enter 1 for rock, 2 for paper and 3 for scissors")
+let choice = prompt("Enter your choice:  ")
+let userChoice = ""
+
+if (choice == "1"){
+    userChoice = "rock";
+} else if(choice == "2"){
+    userChoice = "paper";
+} else if(choice == "3"){
+    userChoice = "scissors";
+}
+
+const gameChoices = ["rock", "paper", "scissors"];
+let index = getRandomInt(0,2);
+
+let computerChoice = gameChoices[index];
+
+console.log("You chose " + userChoice);
+console.log("Computer chose " + computerChoice);
+
+if(userChoice == "rock" && computerChoice == "paper"){
+    console.log("Computer Wins!")
+} else if(userChoice == "rock" && computerChoice == "scissors"){
+    console.log("You Win!")
+} else if(userChoice == "rock" && computerChoice == "rock"){
+    console.log("Is is a tie!")
+} else if(userChoice == "paper" && computerChoice == "paper"){
+    console.log("It is a tie")
+} else if(userChoice == "scissors" && computerChoice == "paper"){
+    console.log("You Win!")
+} else if(userChoice == "scissors" && computerChoice == "scissors"){
+    console.log("It is a tie!")
+} else if(userChoice == "paper" && computerChoice == "scissors"){
+    console.log("Computer Wins!")
+} else if(userChoice == "paper" && computerChoice == "rock"){
+    console.log("You Win!")
+} else if(userChoice == "scissors" && computerChoice == "rock"){
+    console.log("Computer Wins!")
+}
