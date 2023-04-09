@@ -13,3 +13,16 @@ if(num >= 0){
 if(num >= 0){
 console.log(fact);
 }
+
+
+// Alternative Approach (BETTER)
+
+do{
+    var num = parseInt(prompt("Enter a positive number: "));
+} while(num < 0)
+
+var fact = 1;
+for(i=1; i <= num; i++){
+    fact = fact * i;
+}
+console.log(fact);
