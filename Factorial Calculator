@@ -1,0 +1,15 @@
+// Factorial Calculator
+
+let num = parseInt(prompt("Enter a number: "));
+let fact = 1;
+
+if(num >= 0){
+    for(i=1; i <= num; i++){
+    fact = fact * i;
+}} else{
+    console.log("Please enter a positive integer or zero.")
+}
+
+if(num >= 0){
+console.log(fact);
+}
