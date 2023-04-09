@@ -1,0 +1,28 @@
+/*
+BMI Calculator: Write a program that prompts the user to enter
+their weight (in kilograms) and height (in meters) and calculates
+their Body Mass Index (BMI). Then, display a message indicating
+whether they are underweight, normal weight, overweight, or obese
+based on the BMI value using if else statements.
+*/
+
+let weight = prompt("Enter your weight in kg: ");
+let heightInCM = prompt("Enter your height in cm: ")
+
+weight = Number.parseInt(weight);
+heightInCM = Number.parseInt(heightInCM);
+
+let height = heightInCM / 100;
+let bmi = (weight) / (height ** 2);
+
+console.log("Your BMI is " + bmi);
+
+if(bmi < 18.5){
+    console.log("You are underweight!")
+}else if(bmi >= 18.5 && bmi <= 24.9){
+    console.log("You have a healthy body!")
+}else if(bmi > 24.9 && bmi <= 29.9){
+    console.log("You are overweight!")
+}else{
+    console.log("You are obese!")
+}
