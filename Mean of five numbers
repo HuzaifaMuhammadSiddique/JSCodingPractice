@@ -1,0 +1,18 @@
+// Write a function to calculate the mean of 5 numbers.
+
+// CODE
+const meanFive = (a,b,c,d,e) => {
+    return (a+b+c+d+e) / 5
+}
+
+let x = meanFive(1,2,3,4,5)
+let y = meanFive(1,1,1,1,1)
+let z = meanFive(4,6,8,12,20)
+
+const print = (n) => {
+    console.log(n);
+}
+
+print(x);
+print(y);
+print(z);
