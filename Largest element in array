@@ -1,0 +1,26 @@
+// Find the largest element in an array.
+
+// CODE
+
+// This is the solution.
+let array = [1002,3,5,17,1000,120];
+let l = array.length;
+var largest = array[0];
+for(let i=1; i<l; i++){
+    if(array[i] > largest){
+        largest = array[i];
+}
+}
+console.log(largest)
+
+
+// This is a better solution.
+let array = [1002, 3, 5, 17, 1000, 120];
+let largest = array[0];
+for (let num of array) {
+    if (num > largest) {
+        largest = num;
+    }
+}
+console.log(largest);
+ 
