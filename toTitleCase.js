@@ -9,7 +9,7 @@ function capitalizer(string){
   for(let i = 0; i < words.length; i++){
     let word = words[i];
     let firstLetter = word.charAt(0).toUpperCase();
-    let restOfWord = word.slice(1);
+    let restOfWord = word.slice(1).toLowerCase();
     newString = newString + firstLetter + restOfWord + " ";
   }
 
