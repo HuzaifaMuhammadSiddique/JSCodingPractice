@@ -7,9 +7,7 @@ Lastly, ["Alien", "line"], should return true because all of the letters in line
 */
 
 // SOLUTION
-function mutation(arr) {
-    
-    
+function mutation(arr) { 
     let counter = new Set();
     let str1 = arr[0].toLowerCase();
     let str2 = arr[1].toLowerCase();
@@ -25,10 +23,8 @@ function mutation(arr) {
         for(let j=0; j<arr1.length; j++){
             if(arr2[i] === arr1[j]){
                 counter.add(arr2[i]);
-            }
-            
+            }            
         }
-        
     }
     
     let mySet = new Set(arr2)
@@ -40,6 +36,24 @@ function mutation(arr) {
         return false;
     }
 
+}
+
+
+// BEST SOLUTION
+function mutation(arr) {
+  // Convert both strings to lowercase for case-insensitive comparison
+  let str1 = arr[0].toLowerCase();
+  let str2 = arr[1].toLowerCase();
+  
+  // Loop through each character of str2
+  for(let i = 0; i < str2.length; i++) {
+    // If the character is not found in str1, return false
+    if(str1.indexOf(str2[i]) === -1) {
+      return false;
+    }
+  }
+  // If all characters are found, return true
+  return true;
 }
 
 // TESTS
