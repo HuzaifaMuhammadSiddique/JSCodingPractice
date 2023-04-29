@@ -1,5 +1,5 @@
 /*
-1. Write a function that takes an array of integers as input and returns the sum of all the positive integers in the array.
+Write a function that takes an array of integers as input and returns the sum of all the positive integers in the array.
 */
 
 // SOLUTION
