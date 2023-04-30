@@ -1,3 +1,6 @@
+// QUESTION
+/* Write a function that takes an array of integers as input and returns the median value of the array. */
+
 // SOLUTION CODE
 function median(array){
   function sorter(a, b){
