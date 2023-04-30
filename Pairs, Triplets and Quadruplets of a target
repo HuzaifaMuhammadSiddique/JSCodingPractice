@@ -1,0 +1,34 @@
+// QUESTION
+/*
+15. Write a function that takes an array of integers as input and returns the distinct pairs, triplets, and quadruplets
+of integers in the array that sum to a specified target value.
+*/
+
+// SOLUTION CODE
+function targetFinder(array, target){
+
+  let pairs = [];
+
+  for(let i=0; i<array.length; i++){
+    for(let j=i+1; j<array.length; j++){
+      if(array[i] + array[j] === target){
+        pairs.push([array[i], array[j]]);
+      }
+      for(let k=j+1; k<array.length; k++){
+        if(array[i] + array[j] + array[k] === target){
+        pairs.push([array[i], array[j], array[k]]);
+      }
+        for(let l=k+1; l<array.length; l++){
+          if(array[i] + array[j] + array[k] + array[l] === target){
+        pairs.push([array[i], array[j], array[k], array[l]]);
+      }
+        }
+      }
+    }
+  }
+  return pairs;
+}
+
+// TEST
+let a = [1,2,3,4,5,6,8,10];
+console.log(targetFinder(a, 13));
