@@ -14,4 +14,9 @@ function reverseString(str) {
   return newStr;
 }
 
+// TESTS
 console.log(reverseString("hello"))
+console.log(reverseString("level"))
+console.log(reverseString("my name is Huzaifa"))
+console.log(reverseString("Are you sure?"))
+
