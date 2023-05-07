@@ -3,7 +3,7 @@
 Write a function that takes an array of integers as input and returns a new array that contains only the elements that appear more than once in the original array.
 */
 
-// QUESTION
+// SOLUTION
 const moreThanOne = (array) => {
   let newArray = [];
   for(let i=0;i<array.length;i++){
