@@ -1,0 +1,5 @@
+function findLongestWordLength(sentence){
+  var words = sentence.split(" ");
+  words.sort((a, b) => a.length - b.length);
+  return words[words.length - 1].length;
+}
