@@ -1,11 +1,13 @@
 function primeGenerator(n){
-    var list = [2,3,5,7,11,13,17,19,23,29]; 
-    if(n<=10){
+    var list = [2,3]; 
+    if(n<=2){
         return list.slice(0,n);
     }
-    let count = 1;
+    let count = 0;
     let len = list.length;
-    while((len+1) !== n+1){
+    while((len) !== n){
+        count++;
+        len = list.length;
         let number = list[len-1] + count;
         let factors = [];
         for(let i=number; i>=1; i--){
@@ -15,11 +17,12 @@ function primeGenerator(n){
         }
         if(factors.length > 2){
         }else{
-            list.push(number)
+            list.push(number);
+            count = 0;
         }
         len = list.length;
-        count++;
         
+    len = list.length;
     }
     return list;
 }
