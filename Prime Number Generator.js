@@ -1,5 +1,5 @@
 function primeGenerator(n){
-    var list = [2,3,5,7,9,11,13,15,17,19]; // 20 21 22 23 24
+    var list = [2,3,5,7,11,13,17,19,23,29]; 
     if(n<=10){
         return list.slice(0,n);
     }
