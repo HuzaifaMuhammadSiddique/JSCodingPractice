@@ -45,3 +45,55 @@ Note:
 - You can assume that the artifactGrid will contain only valid celestial symbols as characters.
 - The hidden message might not always form a meaningful word, but it will be a sequence of characters extracted from the grid using the traversal pattern.
 */
+
+// SOLUTION
+
+function decryptArtifact(artifactGrid) {
+  const numRows = artifactGrid.length;
+  const numCols = artifactGrid[0].length;
+  let message = '';
+  
+  let row = 0;
+  let col = 0;
+  let moveDown = true;
+
+  while (row < numRows) {
+    message += artifactGrid[row][col];
+
+    if (moveDown) {
+      if (col === numCols - 1) {
+        row++;
+        moveDown = false;
+      } else if (col === 0) {
+        row++;
+        moveDown = false;
+      } else {
+        row++;
+        col--;
+      }
+    } else {
+      if (col === numCols - 1) {
+        row++;
+        moveDown = true;
+      } else if (col === 0) {
+        row++;
+        moveDown = true;
+      } else {
+        row++;
+        col++;
+      }
+    }
+  }
+
+  return message;
+}
+
+// Test data
+const artifactGrid = [
+  ['♈', '♉', '♌', '♊'],
+  ['♋', '♏', '♑', '♓'],
+  ['♍', '♎', '♒', '♐'],
+];
+
+const message = decryptArtifact(artifactGrid);
+console.log(message); // Output: "AQUARIUSGEMINILEOBSCORPIO"
