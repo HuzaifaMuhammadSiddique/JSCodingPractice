@@ -74,3 +74,77 @@ console.log(escapePath); // Output: ["A", "C", "D", "E", "F"]
 In this example, the function should return the most probable path from node "A" to node "F", which is ["A", "C", "D", "E", "F"] with a combined probability of `0.6 * 0.4 * 0.7 * 0.2 * 0.9 = 0.03024`.
 
 */
+
+// SOLUTION
+
+function findEscapePath(startNode, exitNode) {
+  let maxProbability = 0;
+  let bestPath = [];
+
+  function dfs(currentNode, currentPath, currentProbability) {
+    if (currentNode === exitNode) {
+      if (currentProbability > maxProbability) {
+        maxProbability = currentProbability;
+        bestPath = [...currentPath];
+      }
+      return;
+    }
+
+    for (const neighborId of currentNode.neighbors) {
+      const neighborNode = getNodeById(neighborId); // You need to implement this function
+      const neighborProbability = neighborNode.probability;
+      
+      if (!currentPath.includes(neighborId)) {
+        dfs(
+          neighborNode,
+          [...currentPath, neighborId],
+          currentProbability * neighborProbability
+        );
+      }
+    }
+  }
+
+  dfs(startNode, [startNode.id], startNode.probability);
+  return bestPath;
+}
+
+// Test data
+const nodeA = {
+  id: "A",
+  neighbors: ["B", "C"],
+  probability: 0.6
+};
+
+const nodeB = {
+  id: "B",
+  neighbors: ["A", "C", "D"],
+  probability: 0.3
+};
+
+const nodeC = {
+  id: "C",
+  neighbors: ["A", "B", "D"],
+  probability: 0.4
+};
+
+const nodeD = {
+  id: "D",
+  neighbors: ["B", "C", "E"],
+  probability: 0.7
+};
+
+const nodeE = {
+  id: "E",
+  neighbors: ["D", "F"],
+  probability: 0.2
+};
+
+const nodeF = {
+  id: "F",
+  neighbors: ["E"],
+  probability: 0.9
+};
+
+// Call the function with the provided nodes to find the escape path
+const escapePath = findEscapePath(nodeA, nodeF);
+console.log(escapePath); // Output: ["A", "C", "D", "E", "F"]
